@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.text.DecimalFormat;
+
 public class ShippingCosts {
 
     /*
@@ -21,6 +24,43 @@ public class ShippingCosts {
 
     As always, your program should include a method.
      */
+    public static void main(String[] args) {
 
+        double weight = input("How much pounds do you weigh?");
+        int miles = (int)input("How much miles do you need to travel?");
+        int costMul = costMul(miles);
+        double price = priceCheck(weight, costMul);
+        display(price);
+    }
 
+    public static double input(String Prompt){
+        return Double.parseDouble(JOptionPane.showInputDialog(Prompt));
+    }
+
+    public static int costMul(int miles){
+        int neoMiles = miles / 100;
+
+        if(neoMiles == 0){
+            neoMiles = 1;
+        }
+        return neoMiles;
+    }
+
+    public static double priceCheck (double weight, int cost){
+
+        if (weight >= 10){
+            return 4.8 * cost;
+        } else if (weight >= 6){
+            return 3.7 * cost;
+        } else if (weight > 2){
+            return 2.2 * cost;
+        } else {
+            return 1.1 * cost;
+        }
+    }
+
+    public static void display(double price){
+        DecimalFormat round = new DecimalFormat("#,###.00");
+        JOptionPane.showMessageDialog(null, "Your final price is: $" + round.format(price));
+    }
 }
