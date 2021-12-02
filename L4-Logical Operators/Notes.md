@@ -84,7 +84,7 @@ public class L5{
 ``` 
 Oftentimes, programmers look for ways to shorten the code and make it more readable. `license == true` is redundant code and can be shortened to just `license` since the value is either true or false. You could also remove the brackets in the if-statement since there is only one statement after the `if` and `else`. If we had multiple statements, we would HAVE to use brackets. 
 
-Let's look at [**PizzaCost**][pizza]
+Let's look at [**ScubaGear**][pizza]
 
 ### OR
 
